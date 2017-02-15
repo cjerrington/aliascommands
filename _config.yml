@@ -1,0 +1,42 @@
+# Site wide configuration
+
+title: "Alias Commands"
+description: "A way for you to share your and learn programming aliases"
+#if you modify locale please have a look at _data/messages.yml too
+locale: en
+#for meta name="author" :
+author: Alias Commands
+
+#Target date in UTC / GMT
+countdown:
+  theme: red
+  year: 2017
+  month: 4
+  day: 1
+  hour: 0
+  minute: 0
+
+# Site owner
+owner:
+  name: Alias Commands
+  email:
+  twitter: "cjerrington"
+  google-plus:
+  instagramm:
+  #Aboutlink = German "Impressum", provide url and caption (eg "Impressum")
+  aboutlink:
+    url:
+    caption:
+
+
+# Jekyll configuration
+sass:
+  sass_dir: _sass
+  style: compressed
+permalink: /:categories/:title/
+kramdown:
+  toc_levels: 1..2
+highlighter: rouge
+
+
+exclude: ["lib", "config.rb", ".sass-cache", "Capfile", "config", "log", "Rakefile", "Rakefile.rb", "tmp", "*.sublime-project", "*.sublime-workspace", "Gemfile", "Gemfile.lock", "README.md", "LICENSE", "node_modules", "Gruntfile.js", "package.json"]
