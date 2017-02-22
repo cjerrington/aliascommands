@@ -1,0 +1,54 @@
+<div class="col-lg-4">
+  <aside class="right-sidebar">
+  <div class="widget">
+    <form class="form-search">
+      <input class="form-control" type="text" placeholder="Search..">
+    </form>
+  </div>
+  <div class="widget">
+    <h5 class="widgetheading">Categories</h5>
+    <ul class="tags">
+
+      {% assign tags_list = site.categories %}
+        {% if tags_list.first[0] == null %}
+          {% for tag in tags_list %}
+            <li><i class="icon-angle-right"></i><a href="{{site.url}}/categories/#{{ tag }}">{{ tag | capitalize }} <span>({{ site.tags[tag].size }})</span></a></li>
+          {% endfor %}
+        {% else %}
+          {% for tag in tags_list %}
+            <li><i class="icon-angle-right"></i><a href="{{site.url}}/categories/#{{ tag[0] }} ">{{ tag[0] | capitalize }} <span>({{ tag[1].size }})</span></a></li>
+          {% endfor %}
+        {% endif %}
+      {% assign tags_list = nil %}
+
+      <!--li><i class="icon-angle-right"></i><a href="#">Web design</a><span> (20)</span></li>
+      <li><i class="icon-angle-right"></i><a href="#">Online business</a><span> (11)</span></li>
+      <li><i class="icon-angle-right"></i><a href="#">Marketing strategy</a><span> (9)</span></li>
+      <li><i class="icon-angle-right"></i><a href="#">Technology</a><span> (12)</span></li>
+      <li><i class="icon-angle-right"></i><a href="#">About finance</a><span> (18)</span></li-->
+    </ul>
+  </div>
+  <div class="widget">
+    <h5 class="widgetheading">Latest posts</h5>
+    <ul class="recent">
+      {% for post in site.posts limit:5 %}
+        <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+      {% endfor %}
+    </ul>
+  </div>
+  <!--div class="widget">
+    <h5 class="widgetheading">Popular tags</h5>
+    <ul class="tags">
+      <li><a href="#">Web design</a></li>
+      <li><a href="#">Trends</a></li>
+      <li><a href="#">Technology</a></li>
+      <li><a href="#">Internet</a></li>
+      <li><a href="#">Tutorial</a></li>
+      <li><a href="#">Development</a></li>
+    </ul>
+  </div-->
+  </aside>
+</div>
+</div>
+</div>
+</section>

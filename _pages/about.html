@@ -1,0 +1,41 @@
+---
+layout: default
+title: "About"
+permalink: "/about/"
+---
+
+{% include breadcrumbs.html %}
+
+	<section id="content">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+        <h4>What is the Alias Commands website for?</h4>
+  				<p>Find userful aliases from others just like you. Might find something to help your workflow.</p>
+          <p>I had found a similar site back in the day and have recently gotten more accostomed to the Terminal and more involved programming.</p>
+          <p>From then on I have revisted aliases to help make long commands shorter and I am a little lazy to not memorize all of them correctly</p>
+          <p>Aliases are shorthand methods to perform complicated tasks or to speed up the process.<p>
+			</div>
+		</div>
+    <div class="row">
+      <div class="col-md-6">
+        <h4>How to add you aliases to the list</h4>
+          <ul>
+            <li>Create a new draft <a href="#">Here</a></li>
+            <li>add your title, author information, categories, tags as appropriate</li>
+            <li>After the Front Matter add your alias then the More tag and a brief description on the function of the alias and how to use it if applicable.</li>
+            <li>commit the file, and the system admins will be notified and will publish your post</li>
+          </ul>
+      </div>
+      <div class="col-md-6">
+        <h4>How to add aliases to your profile</h4>
+          <ul>
+            <li>Open the Terminal, and make sure you are in the root of your user folder.</li>
+            <li>Type {% highlight %} nano .bash_profile {% endhighlight %}</li>
+            <li>you may now add your changes and aliases</li>
+            <li>to save press ctrl+o, Enter, then exit by ctrl+x</li>
+            <li>Activate changes by typing {% highlight %} source .bash_profile {% endhighlight %}</li>
+          </ul>
+      </div>
+	</div>
+	</section>

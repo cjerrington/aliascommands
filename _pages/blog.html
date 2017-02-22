@@ -1,0 +1,30 @@
+---
+layout: default
+permalink: /blog/
+title: "Browse Aliases"
+---
+
+{% include group-by-array collection=site.posts field="tags" %}
+
+{% include breadcrumbs.html %}
+	<section id="content">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-8">
+				{% for post in site.posts %}
+					<article>
+						<h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
+    				<p>{{ post.excerpt }}</p>
+						<div class="bottom-article">
+							<ul class="meta-post">
+								<li><i class="icon-calendar"></i>{{ post.date | date: "%B %e, %Y" }}</li>
+								<li><i class="icon-user"></i><a href="#"> {{ post.categories }}</a></li>
+							</ul>
+							<a href="{{ post.url }}" class="pull-right">Continue reading <i class="icon-angle-right"></i></a>
+						</div>
+				</article>
+				{% endfor %}
+
+				{% include pagination.html %}
+			</div>
+				{% include sidebar.html %}

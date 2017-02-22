@@ -1,0 +1,33 @@
+---
+layout: default
+author_profile: false
+---
+
+{% include group-by-array collection=site.posts field="categories" %}
+
+	<section id="inner-headline">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-12">
+				<ul class="breadcrumb">
+					<li><a href="{{ site.url }}"><i class="fa fa-home"></i></a><i class="icon-angle-right"></i></li>
+					<li class="active">{{ page.title }}</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	</section>
+	<section id="content">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-8">
+        {% for category in group_names %}
+        <article>
+          {% assign posts = group_items[forloop.index0] %}
+            <h2 id="{{ category | slugify }}"><a href="{{site.url}}/categories/{{category}}">{{ category }}</a></h2>
+        </article>
+        {% endfor %}
+
+{% include pagination.html %}
+
+{% include sidebar.html %}

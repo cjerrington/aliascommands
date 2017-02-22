@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="author" content="{{ site.url }}" />
+{% if site.url %}
+  {% assign seo_url = site.url | append: site.baseurl %}
+{% endif %}
+{% assign seo_url = seo_url | default: site.github.url %}
+
+{% if page.title %}
+  {% assign seo_title = page.title | append: " " | append: site.title_separator | append: " " | append: site.title %}
+{% endif %}
+
+{% if seo_title %}
+  {% assign seo_title = seo_title | markdownify | strip_html | strip_newlines | escape_once %}
+{% endif %}
+
+{% if site.url %}
+  {% assign canonical_url = page.url | replace: "index.html", "" | prepend: site.url %}
+{% endif %}
+
+<title>{{ seo_title | default: site.title }}{% if paginator %}{% unless paginator.page == 1 %} {{ site.title_separator }} {{ site.data.ui-text[site.locale].page | default: "Page" }} {{ paginator.page }}{% endunless %}{% endif %}</title>
+<!-- css -->
+<link href="{{ site.url }}/assets/css/bootstrap.min.css" rel="stylesheet" />
+<link href="{{ site.url }}/assets/css/fancybox/jquery.fancybox.css" rel="stylesheet">
+<link href="{{ site.url }}/assets/css/jcarousel.css" rel="stylesheet" />
+<link href="{{ site.url }}/assets/css/flexslider.css" rel="stylesheet" />
+<link href="{{ site.url }}/assets/css/style.css" rel="stylesheet" />
+
+<!-- Theme skin -->
+<link href="{{ site.url }}/assets/skins/default.css" rel="stylesheet" />
+
+</head>
+
+<body>
+<div id="wrapper">
+	<!-- start header -->
+
+  {% include navigation.html %}

@@ -1,0 +1,45 @@
+---
+layout: default
+permalink: /categories/
+title: "Posts by Category"
+---
+
+{% include group-by-array collection=site.posts field="categories" %}
+
+	<section id="inner-headline">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-12">
+				<ul class="breadcrumb">
+					<li><a href="{{ site.url }}"><i class="fa fa-home"></i></a><i class="icon-angle-right"></i></li>
+					<li class="active">{{ page.title }}</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	</section>
+	<section id="content">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-8">
+        <article>
+					{% for tag in site.categories %}
+					  <h2 id="{{ tag[0] }}">{{ tag[0] | capitalize }}</h2>
+					  <ul class="post-list">
+					    {% assign pages_list = tag[1] %}
+					    {% for post in pages_list %}
+					      {% if post.title != null %}
+					      {% if group == null or group == post.group %}
+					      <li><a href="{{ site.url }}{{ post.url }}">{{ post.title }}<span class="entry-date"></a></li>
+					      {% endif %}
+					      {% endif %}
+					    {% endfor %}
+					    {% assign pages_list = nil %}
+					    {% assign group = nil %}
+					  </ul>
+					{% endfor %}
+        </article>
+
+		</div>
+
+{% include sidebar.html %}
