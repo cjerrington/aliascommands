@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xml" href="http://localhost:4000/feed.xslt.xml"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.4.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2017-02-22T11:36:43-06:00</updated><id>http://localhost:4000//</id><title type="html">Alias Commands</title><subtitle>Add your own and other users public aliases to your profile. Vote on great aliases so they rise to the top.</subtitle><author><name>Clayton Errington</name><email>me@claytonerrington.com</email><uri>http://claytonerrington.com</uri></author><entry><title type="html">Extract Files</title><link href="http://localhost:4000/bash/terminal/Extract-Files/" rel="alternate" type="text/html" title="Extract Files" /><published>2017-02-17T00:00:00-06:00</published><updated>2017-02-17T00:00:00-06:00</updated><id>http://localhost:4000/bash/terminal/Extract-Files</id><content type="html" xml:base="http://localhost:4000/bash/terminal/Extract-Files/">&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-shell&quot; data-lang=&quot;shell&quot;&gt;&lt;span class=&quot;c&quot;&gt;# extract compreessed files&lt;/span&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="http://jekyllrb.com" version="3.4.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2017-02-22T19:30:58-06:00</updated><id>http://localhost:4000/</id><title type="html">Alias Commands</title><subtitle>Add your own and other users public aliases to your profile. Vote on great aliases so they rise to the top.</subtitle><author><name>Clayton Errington</name><email>me@claytonerrington.com</email><uri>http://claytonerrington.com</uri></author><entry><title type="html">Extract Files</title><link href="http://localhost:4000/bash/terminal/Extract-Files/" rel="alternate" type="text/html" title="Extract Files" /><published>2017-02-17T00:00:00-06:00</published><updated>2017-02-17T00:00:00-06:00</updated><id>http://localhost:4000/bash/terminal/Extract-Files</id><content type="html" xml:base="http://localhost:4000/bash/terminal/Extract-Files/">&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-shell&quot; data-lang=&quot;shell&quot;&gt;&lt;span class=&quot;c&quot;&gt;# extract compreessed files&lt;/span&gt;
 &lt;span class=&quot;k&quot;&gt;function &lt;/span&gt;extract &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
  &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt; -z &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$1&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;; &lt;span class=&quot;k&quot;&gt;then&lt;/span&gt;
     &lt;span class=&quot;c&quot;&gt;# display usage if no parameters given&lt;/span&gt;
@@ -33,38 +33,7 @@ fi&lt;/span&gt;
 
 &lt;!--more--&gt;
 
-&lt;p&gt;This allows you quicker access to clear the screen you are working with.&lt;/p&gt;</content><author><name>Clayton Erringon</name></author><category term="productivity" /><summary type="html"># extract compreessed files
-function extract {
- if [ -z &quot;$1&quot; ]; then
-    # display usage if no parameters given
-    echo &quot;Usage: extract &amp;lt;path/file_name&amp;gt;.&amp;lt;zip|rar|bz2|gz|tar|tbz2|tgz|Z|7z|xz|ex|tar.bz2|tar.gz|tar.xz&amp;gt;&quot;
- else
-    if [ -f $1 ] ; then
-        NAME=${1%.*}
-        mkdir $NAME &amp;amp;&amp;amp; cd $NAME
-        case $1 in
-          *.tar.bz2)   tar xvjf ../$1    ;;
-          *.tar.gz)    tar xvzf ../$1    ;;
-          *.tar.xz)    tar xvJf ../$1    ;;
-          *.lzma)      unlzma ../$1      ;;
-          *.bz2)       bunzip2 ../$1     ;;
-          *.rar)       unrar x -ad ../$1 ;;
-          *.gz)        gunzip ../$1      ;;
-          *.tar)       tar xvf ../$1     ;;
-          *.tbz2)      tar xvjf ../$1    ;;
-          *.tgz)       tar xvzf ../$1    ;;
-          *.zip)       unzip ../$1       ;;
-          *.Z)         uncompress ../$1  ;;
-          *.7z)        7z x ../$1        ;;
-          *.xz)        unxz ../$1        ;;
-          *.exe)       cabextract ../$1  ;;
-          *)           echo &quot;extract: '$1' - unknown archive method&quot; ;;
-        esac
-    else
-        echo &quot;$1 - file does not exist&quot;
-    fi
-fi
-}</summary></entry><entry><title type="html">Clear Screen</title><link href="http://localhost:4000/bash/clear-terminal-screen/" rel="alternate" type="text/html" title="Clear Screen" /><published>2017-02-16T00:00:00-06:00</published><updated>2017-02-16T00:00:00-06:00</updated><id>http://localhost:4000/bash/clear-terminal-screen</id><content type="html" xml:base="http://localhost:4000/bash/clear-terminal-screen/">&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;  &lt;span class=&quot;err&quot;&gt;$&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;alias&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cls&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'clear'&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;p&gt;This allows you quicker access to clear the screen you are working with.&lt;/p&gt;</content><author><name>Clayton Erringon</name></author><category term="productivity" /><summary type="html"># extract compreessed files function extract { if [ -z &quot;$1&quot; ]; then # display usage if no parameters given echo &quot;Usage: extract &amp;lt;path/file_name&amp;gt;.&amp;lt;zip|rar|bz2|gz|tar|tbz2|tgz|Z|7z|xz|ex|tar.bz2|tar.gz|tar.xz&amp;gt;&quot; else if [ -f $1 ] ; then NAME=${1%.*} mkdir $NAME &amp;amp;&amp;amp; cd $NAME case $1 in *.tar.bz2) tar xvjf ../$1 ;; *.tar.gz) tar xvzf ../$1 ;; *.tar.xz) tar xvJf ../$1 ;; *.lzma) unlzma ../$1 ;; *.bz2) bunzip2 ../$1 ;; *.rar) unrar x -ad ../$1 ;; *.gz) gunzip ../$1 ;; *.tar) tar xvf ../$1 ;; *.tbz2) tar xvjf ../$1 ;; *.tgz) tar xvzf ../$1 ;; *.zip) unzip ../$1 ;; *.Z) uncompress ../$1 ;; *.7z) 7z x ../$1 ;; *.xz) unxz ../$1 ;; *.exe) cabextract ../$1 ;; *) echo &quot;extract: '$1' - unknown archive method&quot; ;; esac else echo &quot;$1 - file does not exist&quot; fi fi }</summary></entry><entry><title type="html">Clear Screen</title><link href="http://localhost:4000/bash/clear-terminal-screen/" rel="alternate" type="text/html" title="Clear Screen" /><published>2017-02-16T00:00:00-06:00</published><updated>2017-02-16T00:00:00-06:00</updated><id>http://localhost:4000/bash/clear-terminal-screen</id><content type="html" xml:base="http://localhost:4000/bash/clear-terminal-screen/">&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;  &lt;span class=&quot;err&quot;&gt;$&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;alias&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cls&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'clear'&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;!--more--&gt;
 
