@@ -9,6 +9,10 @@
 <lastmod>2017-02-17T00:00:00-06:00</lastmod>
 </url>
 <url>
+<loc>http://localhost:4000/bash/files/show-hide-files/</loc>
+<lastmod>2017-03-09T00:00:00-06:00</lastmod>
+</url>
+<url>
 <loc>http://localhost:4000/404.html</loc>
 </url>
 <url>
@@ -49,6 +53,9 @@
 </url>
 <url>
 <loc>http://localhost:4000/blog/categories/terminal/</loc>
+</url>
+<url>
+<loc>http://localhost:4000/blog/categories/files/</loc>
 </url>
 <url>
 <loc>http://localhost:4000/_pages/portfolio.html</loc>

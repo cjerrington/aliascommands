@@ -104,6 +104,12 @@
 
 
 
+<!-- If not equal to previous then it must be unique as sorted -->
+
+
+
+
+
 
 <!-- group_items -->
 
@@ -120,6 +126,17 @@
 
   
   <h2 id="productivity" class="archive__subtitle">productivity</h2>
+  
+    {% include group-by-array collection=site.posts field="tags" %}
+
+{% for tag in group_names %}
+  {% assign posts = group_items[forloop.index0] %}
+  <h2 id="{{ tag | slugify }}" class="archive__subtitle">{{ tag }}</h2>
+  {% for post in posts %}
+    {{ page.content }}
+  {% endfor %}
+{% endfor %}
+
   
     {% include group-by-array collection=site.posts field="tags" %}
 
@@ -179,6 +196,8 @@
       <div class="widget">
         <h5 class="widgetheading">Latest posts</h5>
         <ul class="link-list">
+          
+              <li><a href="/bash/files/show-hide-files/">Show or hide hidden files on a MacOS</a></li>
           
               <li><a href="/bash/terminal/Extract-Files/">Extract Files</a></li>
           

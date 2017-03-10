@@ -1,0 +1,19 @@
+---
+layout: post
+title: "Show or hide hidden files on a MacOS"
+categories: Bash Files
+tags: productivity
+excerpt_separator: "<!--more-->"
+---
+
+{% highlight ruby %}
+# Show/Hide hidden files
+$ alias showhidden='defaults write com.apple.finder AppleShowAllFiles TRUE; killall Finder'
+$ alias hidehidden='defaults write com.apple.finder AppleShowAllFiles FALSE; killall Finder'
+{% endhighlight %}
+
+<!--more-->
+
+showhidden will allow you to show the hidden files on the file system.
+
+hidehidden will allow you to hide all the . dot files. 

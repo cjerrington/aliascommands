@@ -4,7 +4,7 @@ permalink: /blog/
 title: "Browse Aliases"
 ---
 
-{% include group-by-array collection=site.posts field="tags" %}
+{% include group-by-array collection=site.posts field="categories" %}
 
 {% include breadcrumbs.html %}
 	<section id="content">
@@ -18,7 +18,9 @@ title: "Browse Aliases"
 						<div class="bottom-article">
 							<ul class="meta-post">
 								<li><i class="icon-calendar"></i>{{ post.date | date: "%B %e, %Y" }}</li>
-								<li><i class="icon-user"></i><a href="#"> {{ post.categories }}</a></li>
+								{% for tag in site.categories %}
+									<li><i class="icon-user"></i><a href="{{ site.url }}/categories/#{{ tag[0] | capitalize }}"> {{ tag[0] | capitalize }}</a></li>
+								{% endfor %}
 							</ul>
 							<a href="{{ post.url }}" class="pull-right">Continue reading <i class="icon-angle-right"></i></a>
 						</div>
