@@ -6,7 +6,7 @@ tags: productivity
 excerpt_separator: "<!--more-->"
 ---
 
-{% highlight %}
+{% highlight ruby %}
   function Get-SystemUptime{
     $operatingSystem = Get-WmiObject Win32_OperatingSystem
     [Management.ManagementDateTimeConverter]::ToDateTime($operatingSystem.LastBootUpTime)
